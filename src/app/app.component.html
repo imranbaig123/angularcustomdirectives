@@ -1,0 +1,47 @@
+<div class="container" setBackground>
+  <p>this is a demo HTML content to understand custom Attribute directive</p>
+</div>
+
+<div appHighlight appHover>
+  <p>this is a demo HTML content to understand custom Attribute directive</p>
+</div>
+
+<div class="container" [appBetterhighlight]="'red'" [defaultColor]="'yellow'">
+  <p>this is a demo HTML content to understand @HostBinding directive</p>
+</div>
+
+<div [appClass]="{container: true, 'change-font': true}">
+  <p>this is a demo HTML content to understand How to create custom ngclass directive</p>
+</div>
+
+<div class="container" [appStyle]="{backgroundColor: active ? 'Green' : 'Red', color: 'white', fontweight: 'bold'}">
+  <p>this is a demo HTML content to understand How to create custom ngstyle directive</p>
+</div>
+
+<button class="btn btn-notice" (click)="DisplayNotice()">Show notices</button>
+<div class="info-container notice" *appIf="display">
+  <h3>This is important notice!</h3>
+  <p>This is a notice issued to all</p>
+</div>
+
+<!-- <ng-template #myVar>
+  <p>This is an example Para</p>
+</ng-template> -->
+
+<!-- <ng-template [ngIf]="display">
+  <div class="info-container notice">
+    <h3>This is important notice!</h3>
+    <p>This is a notice issued to all</p>
+  </div>
+</ng-template> -->
+
+<!-- <ng-template #myVar>
+  <p>This is an example Para</p>
+</ng-template> -->
+
+<div class="container" [ngSwitch]="occupation">
+  <p *ngSwitchCase="'teacher'">This paragraph will display when occupation is Teacher</p>
+  <p *ngSwitchCase="'doctor'">This paragraph will display when occupation is Doctor</p>
+  <p *ngSwitchCase="'police'">This paragraph will display when occupation is Police</p>
+  <p *ngSwitchDefault>This paragraph is Default</p>
+</div>
